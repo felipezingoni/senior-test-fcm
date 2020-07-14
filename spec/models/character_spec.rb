@@ -19,7 +19,6 @@
 #  father              :string
 #  mother              :string
 #  spouse              :string
-#  children            :string
 #  siblings            :string
 #  lovers              :string
 #  culture             :string

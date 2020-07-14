@@ -17,7 +17,6 @@ class CreateCharacters < ActiveRecord::Migration[5.0]
       t.string :father
       t.string :mother
       t.string :spouse
-      t.string :children
       t.string :siblings
       t.string :lovers
       t.string :culture

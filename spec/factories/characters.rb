@@ -19,7 +19,6 @@
 #  father              :string
 #  mother              :string
 #  spouse              :string
-#  children            :string
 #  siblings            :string
 #  lovers              :string
 #  culture             :string
@@ -53,7 +52,6 @@ FactoryGirl.define do
     father { Faker::GameOfThrones.character }
     mother { Faker::GameOfThrones.character }
     spouse { Faker::GameOfThrones.character }
-    children { Faker::GameOfThrones.character }
     siblings { Faker::GameOfThrones.character }
     lovers { Faker::GameOfThrones.character }
     culture { Faker::Lorem.word }
