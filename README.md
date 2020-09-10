@@ -20,7 +20,7 @@ who are the backers of this project.
 
 ## New features and bug tracker
 The management of the project is done within Gitlab. New features and bugs are 
-defined in the [issues](/../issues) section.
+defined in the issues.txt file
 
 ## Data in development
 The house data can be added with the seed script from the [houses.json file](/data/houses.json).
