@@ -5,8 +5,8 @@ I realized that create the characters using the form is incredibly slow and erro
 so we'd need to be able to create characters massively. I think using a CSV file where
 we can have all the fields at once speed our job up and does not seem like a very time
 consuming task. Each column represents a field in the database, and each row a character to be created.
-The interface doesn't to be very nice at first, it is more important to be done right now,
-so we can go on with all the data importation.
+The interface hasn't to be very nice at first, it is more important to be done right now,
+so we can go on with all the data import.
 However an essential feature should be to see the result of the import by row. 
 If everything goes fine we can show a link to the created character, 
 otherwise show what error occurred during the creation.
@@ -14,7 +14,7 @@ This way we can create a new file with only the failed rows,
 fix them and upload them again until every character is correctly created.
 
 Tip: 
-Recently we haver remove the field children, as it was duplicated data
+Recently we have removed the field children, as it was a duplicated data
 (it can be calculated with the father and mother fields). The CSV might still contain it, but it can be ignored.
 
 ISSUE 2
@@ -24,7 +24,7 @@ Add family relationships methods.
 In the future we will want each character to have a family view.
 It would help our visitors understand better the relationships among characters.
 They usually enter in our web to remember who is who in the TV show. We can add a Family link in the character show view.
-We want this methods:
+We want these methods:
 Grand parents
 Parents
 Siblings
