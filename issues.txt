@@ -1,19 +1,19 @@
 ISSUE 1
 
 Create an importer for characters
-I realized that create the characters using the form is incredibly slow and error prone, 
+I realized that create the characters using the form is incredibly slow and error prone,
 so we'd need to be able to create characters massively. I think using a CSV file where
 we can have all the fields at once speed our job up and does not seem like a very time
 consuming task. Each column represents a field in the database, and each row a character to be created.
 The interface hasn't to be very nice at first, it is more important to be done right now,
 so we can go on with all the data import.
-However an essential feature should be to see the result of the import by row. 
-If everything goes fine we can show a link to the created character, 
+However an essential feature should be to see the result of the import by row.
+If everything goes fine we can show a link to the created character,
 otherwise show what error occurred during the creation.
 This way we can create a new file with only the failed rows,
 fix them and upload them again until every character is correctly created.
 
-Tip: 
+Tip:
 Recently we have removed the field children, as it was a duplicated data
 (it can be calculated with the father and mother fields). The CSV might still contain it, but it can be ignored.
 
@@ -37,3 +37,23 @@ Cousins
 For the moment we do not need the family-in-law.
 When we have the backend part finished the designer can improve the views.
 After that we can start thinking about in-laws, which I think will be more difficult
+
+
+Resolucion:
+ISSUE #1
+ -En primer paso Cree la base de datos
+ -Corri las migraciones y mire el Schema(cada tabla con sus atributo)
+ -Agregue el atributo Seasons y Children.
+ -Corri nuevamente migraciones.
+ -Modifique el metodo UPLOAD en importer_controller.
+ -Correccion en el archivo show.html.erb de Character.
+
+ISSUE #2
+  -Cree metodos de family relationships de Characters.
+  -Agregue el metodo family en character_controller.
+
+EXTRA:
+  -Agregue la gema minitest y minitest-report.
+  -Cree unos simples test en el modelo Character.
+  -Los test fueron para las validaciones y metodos personalizados.
+  (pude crear unos pocos test por el poco tiempo que tuve.)

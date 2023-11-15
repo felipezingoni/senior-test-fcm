@@ -15,6 +15,10 @@ class CharactersController < ApplicationController
   def edit
   end
 
+  def family
+    @character = Character.find(params[:id])
+  end
+
   def create
     @character = Character.new(character_params)
 

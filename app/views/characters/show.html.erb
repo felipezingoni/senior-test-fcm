@@ -65,13 +65,13 @@
           </thead>
           <tbody>
             <% (1..9).each do |i| %>
-            <td>
-            <% if @character["appears_in_season_#{i}"] == true %>
-            <%=  image_tag('check')%>
-            <% else %>
-            <%=  image_tag('times')%>
-            <% end %>
-            </td>
+              <td>
+                <% if @character.seasons.split(',').include?(i.to_s) %>
+                  <%=  image_tag('check')%>
+                <% else %>
+                  <%=  image_tag('times')%>
+                <% end %>
+              </td>
             <% end %>
           </tbody>
         </table>

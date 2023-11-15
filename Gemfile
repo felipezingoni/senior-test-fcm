@@ -11,6 +11,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'minitest', '~> 5.8', '>= 5.8.4'
+gem 'minitest-reporters', '~> 1.1', '>= 1.1.11'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
@@ -24,7 +26,8 @@ group :development do
 end
 
 group :development, :test do
-  gem 'factory_girl_rails'
+  # gem 'factory_girl_rails'
+  gem 'factory_bot', '~> 6.2', '>= 6.2.1'
   gem 'faker'
   gem 'rspec-rails'
 end

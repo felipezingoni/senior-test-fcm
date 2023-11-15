@@ -1,33 +1,73 @@
 <h1>Family Relationships</h1>
-<h2>Grandparents</h2>
+
+<h2>Grandparents:</h2>
 <ul>
-  <li><a href="#">Todo</a></li>
+  <% @character.grandparents.each do |grandparent|%>
+     <li><p><%= link_to grandparent.name, character_path(grandparent) %></p></li>
+  <% end %>
 </ul>
-<h2>Parents</h2>
+<br>
+<h2>Parents:</h2>
 <ul>
-  <li><a href="#">Todo</a></li>
+  <% father = Character.find_by(name: @character.parents[:father]) %>
+  <% mother = Character.find_by(name: @character.parents[:mother]) %>
+  <% if father.present? %>
+    <li><p><%= link_to father.name, character_path(father) if father %></p></li>
+  <% end %>
+  <% if mother.present? %>
+    <li><p><%= link_to mother.name, character_path(mother) if mother %></p></li>
+  <% end %>
 </ul>
-<h2>Siblings</h2>
+<br>
+<h2>Siblings:</h2>
 <ul>
-  <li><a href="#">Todo</a></li>
+  <% @character.brothers.each_with_index do |brother_name, index| %>
+    <% brother = Character.find_by(name: brother_name) %>
+    <% if brother %>
+      <p><%= link_to "#{index + 1}. #{brother.name}", character_path(brother) %></p>
+    <% end %>
+  <% end %>
 </ul>
+<br>
+
 <h2>Step Siblings</h2>
 <ul>
-  <li><a href="#">Todo</a></li>
+  <% if @character.step_siblings.present? %>
+    <% @character.step_siblings.each do |step_sibling| %>
+      <%= link_to step_sibling.name, character_path(step_sibling) %>
+      <%= ',' unless step_sibling == @character.step_siblings.last %>
+    <% end %>
+  <% end %>
 </ul>
-<h2>Children</h2>
+
+<br>
+<h2>Children:</h2>
 <ul>
-  <li><a href="#">Todo</a></li>
+  <% if @character.childrens.present? %>
+    <% @character.childrens.each do |child_name| %>
+      <% child = Character.find_by(name: child_name.strip) %>
+      <%= link_to child.name, character_path(child) if child %><%= ',' unless child_name == @character.childrens.last %>
+    <% end %>
+  <% end %>
 </ul>
-<h2>Grandchildren</h2>
+<br>
+<h2>Grandchildren:</h2>
 <ul>
-  <li><a href="#">Todo</a></li>
+  <% @character.grandchildren.each_with_index do |grandchild, index| %>
+    <p><%= link_to "#{index + 1}. #{grandchild.name}", character_path(grandchild) %></p>
+  <% end %>
 </ul>
-<h2>Uncles and aunts</h2>
+<br>
+<h2>Uncles and Aunts:</h2>
 <ul>
-  <li><a href="#">Todo</a></li>
+  <% @character.uncles_and_aunts.each_with_index do |uncle, index| %>
+    <p><%= link_to "#{index + 1}. #{uncle.name}", character_path(uncle)  %></p>
+  <% end %>
 </ul>
-<h2>Cousins</h2>
+<br>
+<h2>Cousins:</h2>
 <ul>
-  <li><a href="#">Todo</a></li>
+  <% @character.cousins.each_with_index do |cousin, index| %>
+    <p><%= link_to "#{index + 1}. #{cousin.name}", character_path(cousin) %></p>
+  <% end %>
 </ul>
